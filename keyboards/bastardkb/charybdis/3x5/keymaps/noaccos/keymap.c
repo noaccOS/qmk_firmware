@@ -102,11 +102,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [LAYER_LOWER] = LAYOUT(
   // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
-       RGB_TOG, KC_MNXT, KC_MPLY, KC_MPRV, XXXXXXX,    KC_LBRC,    KC_7,    KC_8,    KC_9, KC_RBRC,
+       KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,    KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       KC_AC_A, KC_AC_O, KC_AC_E, KC_AC_U, KC_AC_I,    KC_PPLS,    KC_4,    KC_5,    KC_6, KC_PMNS,
+       KC_AC_A, KC_AC_O, KC_AC_E, KC_AC_U, KC_AC_I,    KC_PPLS, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC,,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX, XXXXXXX,  EE_CLR, QK_BOOT,    KC_PAST,    KC_1,    KC_2,    KC_3, KC_PSLS,
+       XXXXXXX, XXXXXXX, XXXXXXX,  EE_CLR, QK_BOOT,    KC_PAST, KC_PIPE, KC_QUES, KC_UNDS, KC_PLUS,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
                          XXXXXXX, XXXXXXX, _______,     ADJUST, ALT_MOD
   //                   ╰───────────────────────────╯ ╰──────────────────╯
@@ -114,11 +114,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [LAYER_RAISE] = LAYOUT(
   // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX,
+          KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       KC_GR_A,KC_GR_O,  KC_GR_E, KC_GR_U, KC_GR_I,    XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI,
+       KC_GR_A, KC_GR_O, KC_GR_E, KC_GR_U, KC_GR_I,    XXXXXXX, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       KC_HOME, KC_PGUP, KC_PGDN,  KC_END, XXXXXXX,    QK_BOOT, EE_CLR,  XXXXXXX, XXXXXXX, XXXXXXX,
+       KC_HOME, KC_PGUP, KC_PGDN, KC_HOME,  KC_END,    XXXXXXX, KC_BLSL, KC_SLSH, KC_MINS,  KC_EQL,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
                          GUI_MOD, CTL_MOD,  ADJUST,    _______, XXXXXXX
   //                   ╰───────────────────────────╯ ╰──────────────────╯
