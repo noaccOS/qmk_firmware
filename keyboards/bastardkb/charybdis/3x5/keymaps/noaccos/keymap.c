@@ -68,19 +68,23 @@ const uint32_t PROGMEM unicode_map[] = {
 #define ADJUST MO(LAYER_ADJUST)
 
 #define CTL_BSP CTL_T(KC_BSPC)
-#define SFT_SPC SFT_T(KC_SPC)
+#define SFT_ENT SFT_T(KC_ENT)
 #define GUI_ENT GUI_T(KC_ENT)
 
-#define KC_AC_A XP(aacute, Aacute)
-#define KC_AC_E XP(eacute, Eacute)
-#define KC_AC_I XP(iacute, Iacute)
-#define KC_AC_O XP(oacute, Oacute)
-#define KC_AC_U XP(uacute, Uacute)
-#define KC_GR_A XP(agrave, Agrave)
-#define KC_GR_E XP(egrave, Egrave)
-#define KC_GR_I XP(igrave, Igrave)
-#define KC_GR_O XP(ograve, Ograve)
-#define KC_GR_U XP(ugrave, Ugrave)
+# define CTL_MOD LM(LAYER_BASE, MOD_LCTL)
+# define ALT_MOD LM(LAYER_BASE, MOD_LALT)
+# define GUI_MOD LM(LAYER_BASE, MOD_LALT)
+
+#define KC_AC_A UP(aacute, Aacute)
+#define KC_AC_E UP(eacute, Eacute)
+#define KC_AC_I UP(iacute, Iacute)
+#define KC_AC_O UP(oacute, Oacute)
+#define KC_AC_U UP(uacute, Uacute)
+#define KC_GR_A UP(agrave, Agrave)
+#define KC_GR_E UP(egrave, Egrave)
+#define KC_GR_I UP(igrave, Igrave)
+#define KC_GR_O UP(ograve, Ograve)
+#define KC_GR_U UP(ugrave, Ugrave)
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -92,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
        KC_SMCL,    KC_Q,    KC_J,    KC_K,    KC_X,       KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
-                         CTL_BSP, SFT_SPC,   LOWER,      RAISE, GUI_ENT
+                         SFT_ENT,  KC_SPC,   LOWER,      RAISE,  KC_BSP
   //                   ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
@@ -104,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, XXXXXXX,  EE_CLR, QK_BOOT,    KC_PAST,    KC_1,    KC_2,    KC_3, KC_PSLS,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
-                         XXXXXXX, XXXXXXX, _______,     ADJUST, _______
+                         XXXXXXX, XXXXXXX, _______,     ADJUST, ALT_MOD
   //                   ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
@@ -116,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
        KC_HOME, KC_PGUP, KC_PGDN,  KC_END, XXXXXXX,    QK_BOOT, EE_CLR,  XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
-                         KC_LALT, KC_LCTL,  ADJUST,    _______, XXXXXXX
+                         GUI_MOD, CTL_MOD,  ADJUST,    _______, XXXXXXX
   //                   ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
