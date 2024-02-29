@@ -8,15 +8,6 @@ enum charybdis_keymap_layers {
     
 };
 
-enum planck_layers {
-  _MAIN,
-  _GAME,
-  _LOWER,
-  _RAISE,
-  _ADJUST,
-  _NUMPAD
-};
-
 enum unicode_names {
   agrave,
   egrave,
@@ -67,13 +58,11 @@ const uint32_t PROGMEM unicode_map[] = {
 #define RAISE  MO(LAYER_RAISE)
 #define ADJUST MO(LAYER_ADJUST)
 
-#define CTL_BSP CTL_T(KC_BSPC)
-#define SFT_ENT SFT_T(KC_ENT)
-#define GUI_ENT GUI_T(KC_ENT)
+#define SFT_ESC SFT_T(KC_ESC)
 
-# define CTL_MOD LM(LAYER_BASE, MOD_LCTL)
-# define ALT_MOD LM(LAYER_BASE, MOD_LALT)
-# define GUI_MOD LM(LAYER_BASE, MOD_LALT)
+#define CTL_MOD LM(LAYER_BASE, MOD_LCTL)
+#define ALT_MOD LM(LAYER_BASE, MOD_LALT)
+#define GUI_MOD LM(LAYER_BASE, MOD_LALT)
 
 #define KC_AC_A UP(aacute, Aacute)
 #define KC_AC_E UP(eacute, Eacute)
@@ -96,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
        KC_SMCL,    KC_Q,    KC_J,    KC_K,    KC_X,       KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
-                         SFT_ENT,  KC_SPC,   LOWER,      RAISE,  KC_BSP
+                          KC_ENT,  KC_SPC,   LOWER,      RAISE, SFT_ESC
   //                   ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
@@ -118,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
        KC_GR_A, KC_GR_O, KC_GR_E, KC_GR_U, KC_GR_I,    XXXXXXX, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       KC_HOME, KC_PGUP, KC_PGDN, KC_HOME,  KC_END,    XXXXXXX, KC_BLSL, KC_SLSH, KC_MINS,  KC_EQL,
+       KC_HOME, KC_PGUP, KC_PGDN,  KC_TAB,  KC_TAB,    XXXXXXX, KC_BLSL, KC_SLSH, KC_MINS,  KC_EQL,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
                          GUI_MOD, CTL_MOD,  ADJUST,    _______, XXXXXXX
   //                   ╰───────────────────────────╯ ╰──────────────────╯
@@ -126,13 +115,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [LAYER_ADJUST] = LAYOUT(
   // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX,
+         KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX,    XXXXXXX, KC_VOLU, KC_VOLD, KC_VOLU, XXXXXXX,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       KC_GR_A,KC_GR_O,  KC_GR_E, KC_GR_U, KC_GR_I,    XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI,
+         KC_F5,   KC_F6,   KC_F7,   KC_F8, XXXXXXX,    XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP,  KC_END,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       KC_HOME, KC_PGUP, KC_PGDN,  KC_END, XXXXXXX,    QK_BOOT, EE_CLR,  XXXXXXX, XXXXXXX, XXXXXXX,
+         KC_F9,  KC_F10,  KC_F11,  KC_F12, XXXXXXX,    QK_BOOT, EE_CLR,  XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
-                         KC_LALT, KC_LCTL, XXXXXXX,    _______, XXXXXXX
+                         XXXXXXX, XXXXXXX, _______,    _______, XXXXXXX
   //                   ╰───────────────────────────╯ ╰──────────────────╯
   ),
 };
