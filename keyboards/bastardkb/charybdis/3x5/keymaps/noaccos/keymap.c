@@ -5,7 +5,7 @@ enum charybdis_keymap_layers {
     LAYER_LOWER,
     LAYER_RAISE,
     LAYER_ADJUST,
-    
+    LAYER_TTY,
 };
 
 enum unicode_names {
@@ -57,21 +57,32 @@ const uint32_t PROGMEM unicode_map[] = {
 #define LOWER  MO(LAYER_LOWER)
 #define RAISE  MO(LAYER_RAISE)
 #define ADJUST MO(LAYER_ADJUST)
+#define TTY    OSL(LAYER_TTY)
 
-#define CTL_MOD LM(LAYER_BASE, MOD_LCTL)
-#define ALT_MOD LM(LAYER_BASE, MOD_LALT)
-#define GUI_MOD LM(LAYER_BASE, MOD_LGUI)
+#define ACUTE_A UP(aacute, Aacute)
+#define ACUTE_E UP(eacute, Eacute)
+#define ACUTE_I UP(iacute, Iacute)
+#define ACUTE_O UP(oacute, Oacute)
+#define ACUTE_U UP(uacute, Uacute)
+#define GRAVE_A UP(agrave, Agrave)
+#define GRAVE_E UP(egrave, Egrave)
+#define GRAVE_I UP(igrave, Igrave)
+#define GRAVE_O UP(ograve, Ograve)
+#define GRAVE_U UP(ugrave, Ugrave)
 
-#define KC_AC_A UP(aacute, Aacute)
-#define KC_AC_E UP(eacute, Eacute)
-#define KC_AC_I UP(iacute, Iacute)
-#define KC_AC_O UP(oacute, Oacute)
-#define KC_AC_U UP(uacute, Uacute)
-#define KC_GR_A UP(agrave, Agrave)
-#define KC_GR_E UP(egrave, Egrave)
-#define KC_GR_I UP(igrave, Igrave)
-#define KC_GR_O UP(ograve, Ograve)
-#define KC_GR_U UP(ugrave, Ugrave)
+#define KIL LCTL(LALT(KC_DEL))
+#define TTY1 LCTL(LALT(KC_F1))
+#define TTY2 LCTL(LALT(KC_F2))
+#define TTY3 LCTL(LALT(KC_F3))
+#define TTY4 LCTL(LALT(KC_F4))
+#define TTY5 LCTL(LALT(KC_F5))
+#define TTY6 LCTL(LALT(KC_F6))
+#define TTY7 LCTL(LALT(KC_F7))
+#define TTY8 LCTL(LALT(KC_F8))
+#define TTY9 LCTL(LALT(KC_F9))
+#define TTY10 LCTL(LALT(KC_F10))
+#define TTY11 LCTL(LALT(KC_F11))
+#define TTY12 LCTL(LALT(KC_F12))
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -83,31 +94,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
        KC_SCLN,    KC_Q,    KC_J,    KC_K,    KC_X,       KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
-                         KC_LSFT,  KC_SPC,   LOWER,      RAISE,  KC_ENT
+                         KC_LSFT,   LOWER,  KC_SPC,     KC_ENT,   RAISE
   //                   ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
   [LAYER_LOWER] = LAYOUT(
   // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
-       KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,    KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
+          KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       KC_AC_A, KC_AC_O, KC_AC_E, KC_AC_U, KC_AC_I,    KC_PPLS, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC,
+       GRAVE_A, GRAVE_O, GRAVE_E, GRAVE_U, GRAVE_I,    XXXXXXX, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX, XXXXXXX,  EE_CLR, QK_BOOT,    KC_PAST, KC_PIPE, KC_QUES, KC_UNDS, KC_PLUS,
+       KC_BTN7, KC_BTN8, KC_BTN2, KC_BTN1, KC_BTN3,     KC_GRV, KC_BSLS, KC_SLSH, KC_MINS,  KC_EQL,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
-                         XXXXXXX, XXXXXXX, _______,     ADJUST, ALT_MOD
+                         XXXXXXX, _______, XXXXXXX,    KC_LCTL,  ADJUST
   //                   ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
   [LAYER_RAISE] = LAYOUT(
   // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
-          KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
+       KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,    KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       KC_GR_A, KC_GR_O, KC_GR_E, KC_GR_U, KC_GR_I,    XXXXXXX, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,
+       ACUTE_A, ACUTE_O, ACUTE_E, ACUTE_U, ACUTE_I,     KC_ESC, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX, XXXXXXX,  KC_ESC,  KC_TAB,    XXXXXXX, KC_BSLS, KC_SLSH, KC_MINS,  KC_EQL,
+       XXXXXXX, KC_BSPC,  KC_DEL,  KC_TAB, XXXXXXX,    KC_TILD, KC_PIPE, KC_QUES, KC_UNDS, KC_PLUS,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
-                         GUI_MOD, CTL_MOD,  ADJUST,    _______, XXXXXXX
+                         KC_LALT,  ADJUST, KC_LGUI,    XXXXXXX, _______
   //                   ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
@@ -117,9 +128,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
          KC_F5,   KC_F6,   KC_F7,   KC_F8, UC_NEXT,    XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP,  KC_END,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-         KC_F9,  KC_F10,  KC_F11,  KC_F12, XXXXXXX,    QK_BOOT, EE_CLR,  XXXXXXX, XXXXXXX, XXXXXXX,
+         KC_F9,  KC_F10,  KC_F11,  KC_F12, XXXXXXX,    XXXXXXX,     KIL,     TTY, XXXXXXX, QK_BOOT,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
-                         XXXXXXX, XXXXXXX, _______,    _______, XXXXXXX
+                         XXXXXXX, _______, XXXXXXX,    XXXXXXX, _______
+  //                   ╰───────────────────────────╯ ╰──────────────────╯
+  ),
+
+  [LAYER_TTY] = LAYOUT(
+  // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
+          TTY1,    TTY2,    TTY3,    TTY4, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
+          TTY5,    TTY6,    TTY7,    TTY8, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
+          TTY9,   TTY10,   TTY11,   TTY12, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
+                         XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX
   //                   ╰───────────────────────────╯ ╰──────────────────╯
   ),
 };
