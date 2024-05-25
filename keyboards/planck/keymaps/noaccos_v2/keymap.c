@@ -130,14 +130,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      | Bspc | Del  | Tab  |      |  ~   |  |   |  ?   |  _   |  +   |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      | Alt  | Adj  |Super |      |      |      |      |      |      |      |
+ * |      |      |      | Alt  | Adj  |Super |      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_planck_grid(
     XXXXXXX, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, XXXXXXX,
     XXXXXXX, ACUTE_A, ACUTE_O, ACUTE_E, ACUTE_U, ACUTE_I, KC_ESC,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
     XXXXXXX, XXXXXXX, KC_BSPC, KC_DEL,  KC_TAB,  XXXXXXX, KC_TILD, KC_PIPE, KC_QUES, KC_UNDS, KC_PLUS, XXXXXXX,
-    XXXXXXX, XXXXXXX, KC_LALT, ADJUST,  KC_LGUI, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+    XXXXXXX, XXXXXXX, XXXXXXX, KC_LALT, ADJUST,  KC_LGUI, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 /* Adjust
