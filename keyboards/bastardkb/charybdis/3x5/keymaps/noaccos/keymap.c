@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
           KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       GRAVE_A, GRAVE_O, GRAVE_E, GRAVE_U, GRAVE_I,    XXXXXXX, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC,
+       ACUTE_A, ACUTE_O, ACUTE_E, ACUTE_U, ACUTE_I,    XXXXXXX, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
        KC_BTN7, KC_BTN8, KC_BTN2, KC_BTN1, KC_BTN3,     KC_GRV, KC_BSLS, KC_SLSH, KC_MINS,  KC_EQL,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
@@ -114,7 +114,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
        KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,    KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       ACUTE_A, ACUTE_O, ACUTE_E, ACUTE_U, ACUTE_I,     KC_ESC, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,
+       GRAVE_A, GRAVE_O, GRAVE_E, GRAVE_U, GRAVE_I,     KC_ESC, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
        XXXXXXX, KC_BSPC,  KC_DEL,  KC_TAB, XXXXXXX,    KC_TILD, KC_PIPE, KC_QUES, KC_UNDS, KC_PLUS,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
