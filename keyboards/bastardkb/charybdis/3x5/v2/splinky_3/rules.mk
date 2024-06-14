@@ -18,6 +18,7 @@ RGB_MATRIX_ENABLE = no     # Enable keyboard RGB matrix functionality
 
 SPLIT_KEYBOARD = yes
 
+UNICODE_COMMON = yes
 UNICODEMAP_ENABLE = yes
 
 POINTING_DEVICE_ENABLE = yes # Enable trackball
