@@ -116,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
        ACUTE_A, ACUTE_O, ACUTE_E, ACUTE_U, ACUTE_I,     KC_ESC, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       XXXXXXX, KC_BSPC,  KC_DEL,  KC_TAB, XXXXXXX,    KC_TILD, KC_PIPE, KC_QUES, KC_UNDS, KC_PLUS,
+       XXXXXXX, KC_BSPC,  KC_DEL,  KC_TAB, KC_CAPS,    KC_TILD, KC_PIPE, KC_QUES, KC_UNDS, KC_PLUS,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
                          KC_LGUI,  ADJUST, KC_LCTL,    XXXXXXX, _______
   //                   ╰───────────────────────────╯ ╰──────────────────╯

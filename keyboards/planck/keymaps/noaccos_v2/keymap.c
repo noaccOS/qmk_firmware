@@ -128,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |  Á   |  Ó   |  É   |  Ú   |  Í   | Esc  | Left | Down |  Up  |Right |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      | Bspc | Del  | Tab  |      |  ~   |  |   |  ?   |  _   |  +   |      |
+ * |      |      | Bspc | Del  | Tab  | Caps |  ~   |  |   |  ?   |  _   |  +   |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      | Alt  | Adj  |Super |      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
@@ -136,7 +136,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = LAYOUT_planck_grid(
     XXXXXXX, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, XXXXXXX,
     XXXXXXX, ACUTE_A, ACUTE_O, ACUTE_E, ACUTE_U, ACUTE_I, KC_ESC,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX,
-    XXXXXXX, XXXXXXX, KC_BSPC, KC_DEL,  KC_TAB,  XXXXXXX, KC_TILD, KC_PIPE, KC_QUES, KC_UNDS, KC_PLUS, XXXXXXX,
+    XXXXXXX, XXXXXXX, KC_BSPC, KC_DEL,  KC_TAB,  KC_CAPS, KC_TILD, KC_PIPE, KC_QUES, KC_UNDS, KC_PLUS, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, KC_LGUI, ADJUST,  KC_LCTL, XXXXXXX, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
