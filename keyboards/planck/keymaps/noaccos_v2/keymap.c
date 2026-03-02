@@ -6,6 +6,7 @@ enum planck_layers {
   _RAISE,
   _ADJUST,
   _TTY,
+  _GAMING_QWERTY,
 };
 
 enum unicode_names {
@@ -54,6 +55,9 @@ const uint32_t PROGMEM unicode_map[] = {
   [Uacute] = 0x00DA
 };
 
+#define MAIN DF(_MAIN)
+#define GAME DF(_GAMING_QWERTY)
+
 #define LOWER  MO(_LOWER)
 #define RAISE  MO(_RAISE)
 #define ADJUST MO(_ADJUST)
@@ -94,14 +98,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |Shift |Lower |Space | Ret  |Raise |      |      |      |      |
+ * |      |      |      | Ret  |Lower |Space |Shift |Raise |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_MAIN] = LAYOUT_planck_grid(
-    XXXXXXX, KC_QUOT, KC_COMM, KC_DOT, KC_P,  KC_Y,   KC_F,    KC_G,  KC_C,    KC_R,    KC_L,     XXXXXXX,
-    XXXXXXX, KC_A,    KC_O,    KC_E,   KC_U,  KC_I,   KC_D,    KC_H,  KC_T,    KC_N,    KC_S,     XXXXXXX,
-    XXXXXXX, KC_SCLN, KC_Q,    KC_J,   KC_K,  KC_X,   KC_B,    KC_M,  KC_W,    KC_V,    KC_Z,     XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT, LOWER, KC_SPC, KC_LSFT, RAISE, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX
+    XXXXXXX, KC_QUOT, KC_COMM, KC_DOT, KC_P,  KC_Y,   KC_F,    KC_G,  KC_C,    KC_R,    KC_L,    XXXXXXX,
+    XXXXXXX, KC_A,    KC_O,    KC_E,   KC_U,  KC_I,   KC_D,    KC_H,  KC_T,    KC_N,    KC_S,    XXXXXXX,
+    XXXXXXX, KC_SCLN, KC_Q,    KC_J,   KC_K,  KC_X,   KC_B,    KC_M,  KC_W,    KC_V,    KC_Z,    XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT, LOWER, KC_SPC, KC_LSFT, RAISE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 /* Lower
@@ -164,16 +168,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      | TTY5 | TTY6 | TTY7 | TTY8 |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      | TTY9 |TTY10 |TTY11 |TTY12 |      |      |      |      |      |      |      |
+ * |      | TTY9 |TTY10 |TTY11 |TTY12 |      |      | Main | Game |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_TTY] = LAYOUT_planck_grid(
-    XXXXXXX, TTY1,    TTY2,    TTY3,    TTY4,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
-    XXXXXXX, TTY5,    TTY6,    TTY7,    TTY8,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
-    XXXXXXX, TTY9,    TTY10,   TTY11,   TTY12,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX
+    XXXXXXX, TTY1,    TTY2,    TTY3,    TTY4,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, TTY5,    TTY6,    TTY7,    TTY8,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, TTY9,    TTY10,   TTY11,   TTY12,   XXXXXXX, XXXXXXX, MAIN,    GAME,    XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+),
+
+/* QWERTY - Game
+ * ,-----------------------------------------------------------------------------------.
+ * |      |   P  |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      | Shift|   A  |   S  |   D  |   F  |   G  |   H  |   J  |   K  |   L  |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   ;  |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      | Ret  |Lower |Space |Shift |Raise |      |      |      |      |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_GAMING_QWERTY] = LAYOUT_planck_grid(
+    XXXXXXX, KC_P,    KC_Q,    KC_W,   KC_E,  KC_R,   KC_T,    KC_Y,  KC_U,    KC_I,    KC_O,    XXXXXXX,
+    XXXXXXX, KC_LSFT, KC_A,    KC_S,   KC_D,  KC_F,   KC_G,    KC_H,  KC_J,    KC_K,    KC_L,    XXXXXXX,
+    XXXXXXX, KC_Z,    KC_X,    KC_C,   KC_V,  KC_B,   KC_N,    KC_M,  KC_COMM, KC_DOT,  KC_SCLN, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT, LOWER, KC_SPC, KC_LSFT, RAISE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 )
 };
 // clang-format on

@@ -6,6 +6,7 @@ enum charybdis_keymap_layers {
     LAYER_RAISE,
     LAYER_ADJUST,
     LAYER_TTY,
+    LAYER_GAMING_QWERTY,
 };
 
 enum unicode_names {
@@ -53,6 +54,9 @@ const uint32_t PROGMEM unicode_map[] = {
   [Oacute] = 0x00D3,
   [Uacute] = 0x00DA
 };
+
+#define MAIN DF(_MAIN)
+#define GAME DF(_GAMING_QWERTY)
 
 #define LOWER  MO(LAYER_LOWER)
 #define RAISE  MO(LAYER_RAISE)
@@ -140,9 +144,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
           TTY5,    TTY6,    TTY7,    TTY8, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-          TTY9,   TTY10,   TTY11,   TTY12, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+          TTY9,   TTY10,   TTY11,   TTY12, XXXXXXX,    XXXXXXX,    MAIN,    GAME, XXXXXXX, XXXXXXX,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX
+  //                   ╰───────────────────────────╯ ╰──────────────────╯
+  ),
+
+  [LAYER_GAMING_QWERTY] = LAYOUT(
+  // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
+          KC_P,    KC_Q,    KC_W,    KC_E,    KC_R,       KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
+  // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
+       KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,       KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
+  // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
+          KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M,  KC_COMM, KC_DOT, KC_SCLN,
+  // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
+                          KC_ENT,   LOWER,  KC_SPC,    KC_LSFT,   RAISE
   //                   ╰───────────────────────────╯ ╰──────────────────╯
   ),
 };
